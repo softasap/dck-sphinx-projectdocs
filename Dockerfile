@@ -1,8 +1,8 @@
 FROM softasap/alpine:full
 MAINTAINER Vyacheslav Voronenko <git@voronenko.info>
 
-env USER_ID 1000  # to correctly remap user rights
-env GROUP_ID 1000 # to correctly remap user rights
+env DOCKER_UID 1000  # to correctly remap user rights
+# env DOCKER_USER youruser # to correctly remap user rights
 
 # Graphviz
 RUN mkdir /graphviz && \
@@ -13,7 +13,7 @@ RUN mkdir /graphviz && \
 
 RUN apk add --update curl && \
     mkdir -p /opt/plantuml/ && \
-    curl  https://sourceforge.net/projects/plantuml/files/plantuml.jar/download > /opt/plantuml/plantuml.jar && \
+    curl -L  https://sourceforge.net/projects/plantuml/files/plantuml.jar/download > /opt/plantuml/plantuml.jar && \
     rm -rf /var/cache/apk/*
 
 COPY docker/plantuml /usr/bin/plantuml

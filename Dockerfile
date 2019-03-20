@@ -33,5 +33,9 @@ RUN  apk add --no-cache python && \
      apk add --update bash && \
      python -m ensurepip && \
      rm -r /usr/lib/python*/ensurepip && \
+     pip install --upgrade pip && \
+     pip install virtualenv && \
+     update-ca-certificates && \
      pip install -r /requirements.txt && \
+     rm -rf /var/cache/apk/* && \
      rm -r /root/.cache

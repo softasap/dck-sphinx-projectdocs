@@ -1,4 +1,7 @@
 #!/bin/sh
+
+set -xe
+
 if [ -z $1 ]
 then
   TAG=":latest"

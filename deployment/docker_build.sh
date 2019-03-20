@@ -1,5 +1,8 @@
 #!/bin/sh
 # do docker build --no-cache to drop cached parts
+
+set -xe
+
 if [ -z $1 ]
 then
   TAG=":latest"

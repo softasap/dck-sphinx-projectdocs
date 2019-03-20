@@ -1,5 +1,10 @@
 #!/bin/sh
 
+WORKSPACE=$(
+  cd $(dirname "$0")
+  pwd
+)
+
 set -xe
 
 if [ -z $1 ]
